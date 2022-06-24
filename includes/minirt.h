@@ -6,7 +6,7 @@
 /*   By: marlean <marlean@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:44:55 by marlean           #+#    #+#             */
-/*   Updated: 2022/06/24 17:16:37 by marlean          ###   ########.fr       */
+/*   Updated: 2022/06/24 19:49:58 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,13 @@ typedef struct s_camera //КАМЕРА
 {
 	struct s_coord	view_point;
 	struct s_coord	orient_vector;
-	int				horiz_degrees;
+	double			horiz_degrees;
 }	t_camera;
 
 typedef struct s_light //НАПРАВЛЕННЫЙ СВЕТ
 {
 	struct s_coord	coord;
 	double			bright;
-	struct s_color	color;
 }	t_light;
 
 typedef struct s_scene //СТРУКТУРА С ОБЩИМ СВЕТОМ, КАМЕРОЙ, НАПРАВЛЕННЫМ СВЕТОМ
@@ -65,7 +64,50 @@ typedef struct s_scene //СТРУКТУРА С ОБЩИМ СВЕТОМ, КАМЕ
 	struct s_light	light;
 }	t_scene;
 
-//print_structs.c
-void	print_alight(t_alight *alight);
+typedef struct s_sphere // СФЕРА 
+{
+	struct s_coord	coord;
+	double			diameter;
+	struct s_color	color;
+}	t_sphere;
 
+typedef struct s_plane // ПЛОСКОСТЬ
+{
+	struct s_coord	coord;
+	struct s_coord	orient_vector;
+	struct s_color	color;
+}	t_plane;
+
+typedef struct s_cylind // ЦИЛИНДР
+{
+	struct s_coord	coord;
+	struct s_coord	orient_vector;
+	double			diameter;
+	double			height;
+	struct s_color	color;
+}	t_cylind;
+
+typedef struct s_objects //СТРУКТУРА С ОБЪЕКТАМИ
+{
+	struct s_sphere	sphere;
+	struct s_plane	plane;
+	struct s_cylind	cylind;
+}	t_objects;
+
+// ОБЩАЯ СТРУКТУРА В КОТОРОЙ ХРАНЯТСЯ И ОБЪЕКТЫ И ОСВЕЩЕНИЕ
+typedef struct s_data
+{
+	struct s_objects	objects;
+	struct s_scene		scene;
+}	t_data;
+
+//print_structs.c
+void	print_array(char **arr);
+
+void	print_alight(t_alight *alight);
+void	print_camera(t_camera *camera);
+void	print_light(t_light *light);
+void	print_sphere(t_sphere *sphere);
+void	print_plane(t_plane *plane);
+void	print_cylind(t_cylind *cylind);
 #endif

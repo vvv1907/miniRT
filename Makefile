@@ -20,6 +20,7 @@ FILES_PARSE		=	parser.c \
 					utils_parser.c \
 					init_parser.c \
 					fill_obj.c \
+					fill_scene.c \
 
 SRCS_PARSE		=	$(addprefix $(DIR_PARSE), $(FILES_PARSE))
 OBJS_PARSE		=	$(SRCS_PARSE:%.c=%.o)

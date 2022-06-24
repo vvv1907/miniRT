@@ -6,23 +6,11 @@
 /*   By: marlean <marlean@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:58:54 by marlean           #+#    #+#             */
-/*   Updated: 2022/06/24 16:08:56 by marlean          ###   ########.fr       */
+/*   Updated: 2022/06/24 18:45:15 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
-
-void	print_array(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-	{
-		printf("%s\n", arr[i]);
-		i++;
-	}
-}
 
 void	error_parser(char *str)
 {

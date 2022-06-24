@@ -6,7 +6,7 @@
 /*   By: marlean <marlean@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:14:31 by marlean           #+#    #+#             */
-/*   Updated: 2022/06/24 14:06:16 by marlean          ###   ########.fr       */
+/*   Updated: 2022/06/24 19:34:00 by marlean          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 
 int		get_next_line(char **line);
 int		gnl_fd(char **line, int fd);
+double	ft_atof(const char *str);
 int		ft_atoi(const char *str);
 int		ft_isspace(char c);
 void	ft_bzero(void *str, size_t size);

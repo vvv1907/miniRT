@@ -19,8 +19,11 @@ echo
 echo scenes/err1.txt
 ./minirt scenes/err1.txt
 echo
-echo scenes/2.rt
-./minirt scenes/2.rt
+echo scenes/empty.rt
+./minirt scenes/empty.rt
 echo
-echo correct file:
+echo correct file 1:
 ./minirt scenes/1.rt
+echo
+echo correct file 2:
+./minirt scenes/2.rt
