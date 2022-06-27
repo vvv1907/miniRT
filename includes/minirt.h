@@ -94,11 +94,25 @@ typedef struct s_objects //СТРУКТУРА С ОБЪЕКТАМИ
 	struct s_cylind	cylind;
 }	t_objects;
 
+typedef struct s_img
+{
+	void				*img;
+	int					width;
+	int					height;
+	char				*addr;
+	int					bits_per_pixel;
+	int					bytes_per_line;
+	int					endian;
+}	t_img;
+
 // ОБЩАЯ СТРУКТУРА В КОТОРОЙ ХРАНЯТСЯ И ОБЪЕКТЫ И ОСВЕЩЕНИЕ
 typedef struct s_data
 {
 	struct s_objects	objects;
 	struct s_scene		scene;
+	void				*mlx;
+	void				*window;
+	t_img				*img;
 }	t_data;
 
 //print_structs.c

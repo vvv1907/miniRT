@@ -1,4 +1,4 @@
-NAME_RT			=	minirt
+NAME_RT			=	miniRT
 
 INCLUDES_RT		=	includes/
 HEADER_RT		=	includes/minirt.h
@@ -32,7 +32,7 @@ RM				=	rm -f
 #MLX
 MLX			= libmlx.a
 MLX_PATH	= mlx_1/
-MLX_FLAGS	= -framework OpenGL -framework AppKit
+MLX_FLAGS	= -lmlx -framework OpenGL -framework AppKit
 
 .PHONY	:	all clean fclean re libft mlx norm
 
@@ -46,7 +46,7 @@ libft	:
 			@make -C $(DIR_LIB)
 
 $(NAME_RT)	:	$(OBJS_PARSE) $(OBJS_SRC) #PLACE FOR ADDITIONAL OBJECTS IF ANY.
-			$(CC) $(OBJS_PARSE) $(OBJS_SRC) $(LIBFT) -o $@
+			$(CC) $(OBJS_PARSE) $(OBJS_SRC) $(LIBFT) $(MLX_FLAGS) -o $@
 
 %.o	:	%.c $(LIBFT) $(HEADER_RT) $(MLX_PATH)$(MLX) Makefile
 			$(CC) $(CFLAGS) -I $(INCLUDES_RT) -c $< -o $@

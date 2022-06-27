@@ -12,11 +12,29 @@
 
 #include "minirt.h"
 
+static int	close_minirt(void)
+{
+	printf("\nExit\n");
+	exit(0);
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
-	t_data	data;
+	t_data	*data;
 
-	init_data(&data);
-	open_scene(argc, argv, &data);
+	data = (t_data	*)malloc(sizeof(t_data));
+	if (!data)
+		exit (1);
+	init_data(data);
+	open_scene(argc, argv, data);
+	data->mlx = mlx_init();
+	if (!data->mlx)
+		exit (1);
+	data->window = mlx_new_window(data->mlx, 1920, 1080, "miniRT");
+	if (!data->window)
+		exit (1);
+	mlx_hook(data->window, 17, 0, close_minirt, data);
+	mlx_loop(data->mlx);
 	return (0);
 }

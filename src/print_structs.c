@@ -67,7 +67,7 @@ void	print_sphere(t_sphere *sphere)
 void	print_plane(t_plane *plane)
 {
 	printf("\n*******Plane*******\n");
-		printf("Coord: %.2f,%.2f,%.2f\n", plane->coord.x,
+	printf("Coord: %.2f,%.2f,%.2f\n", plane->coord.x,
 		plane->coord.y, plane->coord.z);
 	printf("Orientation vector: %.2f,%.2f,%.2f\n", plane->orient_vector.x,
 		plane->orient_vector.y, plane->orient_vector.z);
